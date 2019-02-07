@@ -56,7 +56,14 @@ class MainView: UIView {
     }
     
     private func setupContentView(){
-        addSubview(LoadingMoviesView(frame: CGRect(x: 0, y: 120, width: screenSize.width, height: screenSize.height - 180)))
+        let frame = CGRect(x: 0, y: 120, width: screenSize.width, height: screenSize.height - 180)
+        
+        // addSubview(LoadingMoviesView(frame: frame))
+        // addSubview(EmptySearchView(frame: frame))
+        // addSubview(ErrorView(frame: frame))
+        addSubview(EmptyFavoritesView(frame: frame))
+        
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

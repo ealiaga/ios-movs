@@ -8,4 +8,5 @@ target 'Movs' do
   # Pods for Movs
   pod 'RealmSwift'
   pod 'Alamofire'
+
 end
