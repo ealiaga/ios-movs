@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SerachBarView: UIView {
+class SerachBarView: UIView, UITextFieldDelegate {
 
     let screenSize = UIScreen.main.bounds;
     
@@ -34,9 +34,16 @@ class SerachBarView: UIView {
         seachtTextFiled.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 9, height: seachtTextFiled.frame.height))
         seachtTextFiled.leftViewMode = .always
         seachtTextFiled.rightViewMode = .always
+        seachtTextFiled.delegate = self;
         
         addSubview(seachtTextFiled)
     }
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
    
+ 
 }

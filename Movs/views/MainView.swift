@@ -25,8 +25,8 @@ class MainView: UIView {
         backgroundColor = ColorsMovs.WHITE
         setupHeader()
         setupSearchBar()
-        setupFooter()
         setupContentView()
+        setupFooter()
     }
     
     private func setupHeader(){
@@ -39,7 +39,7 @@ class MainView: UIView {
     }
     
     private func getTitle() -> UILabel {
-        let title: UILabel = UILabel(frame: CGRect(x:0, y:30, width: screenSize.width, height: 20))
+        let title: UILabel = UILabel(frame: CGRect(x:0, y:36, width: screenSize.width, height: 20))
         title.textColor = UIColor.white
         title.text = "Movies"
         title.textAlignment = NSTextAlignment.center
@@ -57,5 +57,9 @@ class MainView: UIView {
     
     private func setupContentView(){
         addSubview(LoadingMoviesView(frame: CGRect(x: 0, y: 120, width: screenSize.width, height: screenSize.height - 180)))
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.superview?.endEditing(true)
     }
 }
