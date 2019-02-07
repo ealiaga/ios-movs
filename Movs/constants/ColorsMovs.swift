@@ -15,7 +15,7 @@ struct ColorsMovs {
 
     static let WHITE = UIColor(red: 249/255, green: 249/255, blue: 249/255, alpha: 1)
     
-
+    static let GRAY_LIGHT = UIColor(red: 226/255, green: 226/255, blue: 226/255, alpha: 1)
 }
 
 

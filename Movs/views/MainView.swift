@@ -26,6 +26,7 @@ class MainView: UIView {
         setupHeader()
         setupSearchBar()
         setupFooter()
+        setupContentView()
     }
     
     private func setupHeader(){
@@ -52,5 +53,9 @@ class MainView: UIView {
 
     private func setupFooter(){
         addSubview(FooterBarView(frame: screenSize))
+    }
+    
+    private func setupContentView(){
+        addSubview(LoadingMoviesView(frame: CGRect(x: 0, y: 120, width: screenSize.width, height: screenSize.height - 180)))
     }
 }
