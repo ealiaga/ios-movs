@@ -13,6 +13,9 @@ class FooterBarView: UIView {
     let screenSize = UIScreen.main.bounds
     let heightFooter:CGFloat = 60
     
+    var buttonMovies = UIView()
+    var buttonFavorites = UIView()
+    
     var iconMovies = UIImageView()
     var labelMovies = UILabel()
     var iconFavorites = UIImageView()
@@ -35,7 +38,7 @@ class FooterBarView: UIView {
     }
     
     private func setupMoviesButton(){
-        let buttonView = UIView(frame: CGRect(x: 0, y: 0, width: screenSize.width/2, height: heightFooter))
+        buttonMovies = UIView(frame: CGRect(x: 0, y: 0, width: screenSize.width/2, height: heightFooter))
         
         iconMovies = UIImageView(frame: CGRect(x: screenSize.width/4 - 13, y: 10, width: 26, height: 26))
         
@@ -45,18 +48,18 @@ class FooterBarView: UIView {
         labelMovies.textAlignment = NSTextAlignment.center
         labelMovies.text = "Movies"
         
-        buttonView.addSubview(iconMovies)
-        buttonView.addSubview(labelMovies)
+        buttonMovies.addSubview(iconMovies)
+        buttonMovies.addSubview(labelMovies)
         
-        buttonView.isUserInteractionEnabled = true;
-        buttonView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.selectMovies)))
+        buttonMovies.isUserInteractionEnabled = true;
+        // buttonMovies.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.selectMovies)))
         setupMoviesActive()
         
-        addSubview(buttonView)
+        addSubview(buttonMovies)
     }
 
     private func setupFavoritesButton(){
-        let buttonView = UIView(frame: CGRect(x: screenSize.width/2, y: 0, width: screenSize.width/2, height: heightFooter))
+        buttonFavorites = UIView(frame: CGRect(x: screenSize.width/2, y: 0, width: screenSize.width/2, height: heightFooter))
         
         iconFavorites = UIImageView(frame: CGRect(x: screenSize.width/4 - 13, y: 10, width: 26, height: 26))
 
@@ -66,15 +69,15 @@ class FooterBarView: UIView {
         labelFavorites.textAlignment = NSTextAlignment.center
         labelFavorites.text = "Favorites"
         
-        buttonView.addSubview(iconFavorites)
-        buttonView.addSubview(labelFavorites)
+        buttonFavorites.addSubview(iconFavorites)
+        buttonFavorites.addSubview(labelFavorites)
         
-        buttonView.isUserInteractionEnabled = true;
-        buttonView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.selectFavorites)))
+        buttonFavorites.isUserInteractionEnabled = true;
+        // buttonFavorites.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.selectFavorites)))
         
         setupFavoritesInActive()
         
-        addSubview(buttonView)
+        addSubview(buttonFavorites)
     }
     
     private func setupMoviesActive(){
@@ -97,12 +100,12 @@ class FooterBarView: UIView {
         labelFavorites.textColor = ColorsMovs.PURPLE_ULTRA_LIGHT
     }
     
-    @objc func selectMovies(sender:UITapGestureRecognizer){
+    public func selectMovies(){
         setupMoviesActive()
         setupFavoritesInActive()
     }
     
-    @objc func selectFavorites(sender:UITapGestureRecognizer){
+    public func selectFavorites(){
         setupFavoritesActive()
         setupMoviesInActive()
         

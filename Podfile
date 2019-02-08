@@ -7,6 +7,8 @@ target 'Movs' do
 
   # Pods for Movs
   pod 'RealmSwift'
-  pod 'Alamofire'
+  pod 'Alamofire', '~> 4.7'
+  pod 'AlamofireObjectMapper', '~> 5.2'
+  pod 'AlamofireImage', '~> 3.5'
 
 end

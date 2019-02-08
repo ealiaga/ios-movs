@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		06C53A13F647A4880AF8BAC2 /* Pods_Movs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 429C0155E571C714729057D9 /* Pods_Movs.framework */; };
+		3E094DD6220CFF0C0005806E /* NetwortManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E094DD5220CFF0C0005806E /* NetwortManager.swift */; };
+		3E094DD8220CFF900005806E /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E094DD7220CFF900005806E /* API.swift */; };
+		3E094DDA220D18640005806E /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E094DD9220D18640005806E /* PersistenceManager.swift */; };
+		3E094DDD220D21470005806E /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E094DDC220D21470005806E /* Results.swift */; };
+		3E094DDF220D28B80005806E /* MoviesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E094DDE220D28B80005806E /* MoviesGridView.swift */; };
+		3E094DE3220D4DF60005806E /* ios-movs.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E094DE2220D4DF60005806E /* ios-movs.png */; };
 		3E1D8079220BD8DA004D861F /* EmptySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1D8078220BD8DA004D861F /* EmptySearchView.swift */; };
 		3E1D807D220BD9F0004D861F /* ios-search-purple@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E1D807A220BD9F0004D861F /* ios-search-purple@3x.png */; };
 		3E1D807E220BD9F0004D861F /* ios-search-purple@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E1D807B220BD9F0004D861F /* ios-search-purple@2x.png */; };
@@ -58,6 +64,12 @@
 
 /* Begin PBXFileReference section */
 		19A9D0F55A9675E462F96234 /* Pods-Movs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Movs/Pods-Movs.debug.xcconfig"; sourceTree = "<group>"; };
+		3E094DD5220CFF0C0005806E /* NetwortManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetwortManager.swift; sourceTree = "<group>"; };
+		3E094DD7220CFF900005806E /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		3E094DD9220D18640005806E /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		3E094DDC220D21470005806E /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		3E094DDE220D28B80005806E /* MoviesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesGridView.swift; sourceTree = "<group>"; };
+		3E094DE2220D4DF60005806E /* ios-movs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios-movs.png"; sourceTree = "<group>"; };
 		3E1D8078220BD8DA004D861F /* EmptySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySearchView.swift; sourceTree = "<group>"; };
 		3E1D807A220BD9F0004D861F /* ios-search-purple@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios-search-purple@3x.png"; sourceTree = "<group>"; };
 		3E1D807B220BD9F0004D861F /* ios-search-purple@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios-search-purple@2x.png"; sourceTree = "<group>"; };
@@ -130,6 +142,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3E094DDB220D21310005806E /* extentions */ = {
+			isa = PBXGroup;
+			children = (
+				3E094DDC220D21470005806E /* Results.swift */,
+			);
+			path = extentions;
+			sourceTree = "<group>";
+		};
+		3E094DE1220D43720005806E /* persistence */ = {
+			isa = PBXGroup;
+			children = (
+				3E094DD9220D18640005806E /* PersistenceManager.swift */,
+			);
+			path = persistence;
+			sourceTree = "<group>";
+		};
 		3E1D8090220BE538004D861F /* models */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +169,8 @@
 		3E1D8093220BE9ED004D861F /* networking */ = {
 			isa = PBXGroup;
 			children = (
+				3E094DD5220CFF0C0005806E /* NetwortManager.swift */,
+				3E094DD7220CFF900005806E /* API.swift */,
 			);
 			path = networking;
 			sourceTree = "<group>";
@@ -171,6 +201,7 @@
 		3E7F2750220A6EB400408DDC /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				3E094DE2220D4DF60005806E /* ios-movs.png */,
 				3E1D808A220BE1F7004D861F /* ios-heart-empty-purple.png */,
 				3E1D808B220BE1F7004D861F /* ios-heart-empty-purple@2x.png */,
 				3E1D808C220BE1F7004D861F /* ios-heart-empty-purple@3x.png */,
@@ -220,6 +251,8 @@
 		3EC81644220920380089792D /* Movs */ = {
 			isa = PBXGroup;
 			children = (
+				3E094DE1220D43720005806E /* persistence */,
+				3E094DDB220D21310005806E /* extentions */,
 				3E1D8093220BE9ED004D861F /* networking */,
 				3E1D8090220BE538004D861F /* models */,
 				3E7F2750220A6EB400408DDC /* assets */,
@@ -254,6 +287,7 @@
 				3E1D8078220BD8DA004D861F /* EmptySearchView.swift */,
 				3E1D8080220BDFE8004D861F /* ErrorView.swift */,
 				3E1D8088220BE195004D861F /* EmptyFavoritesView.swift */,
+				3E094DDE220D28B80005806E /* MoviesGridView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -332,6 +366,7 @@
 				3E1D8086220BE025004D861F /* ios-close-circle@3x.png in Resources */,
 				3E7F276C220A77D300408DDC /* ios-heart-empty-white@2x.png in Resources */,
 				3E1D807E220BD9F0004D861F /* ios-search-purple@2x.png in Resources */,
+				3E094DE3220D4DF60005806E /* ios-movs.png in Resources */,
 				3E7F2755220A70C800408DDC /* ios-film-gray.png in Resources */,
 				3E7F2754220A70C800408DDC /* ios-film-gray@2x.png in Resources */,
 				3E7F2743220A577F00408DDC /* Dosis-ExtraLight.ttf in Resources */,
@@ -377,6 +412,9 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Movs/Pods-Movs-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
@@ -385,6 +423,9 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
@@ -428,9 +469,14 @@
 				3E1D8079220BD8DA004D861F /* EmptySearchView.swift in Sources */,
 				3EC8165D220931020089792D /* MainView.swift in Sources */,
 				3E7F274B220A591000408DDC /* FontMovs.swift in Sources */,
+				3E094DDA220D18640005806E /* PersistenceManager.swift in Sources */,
+				3E094DD8220CFF900005806E /* API.swift in Sources */,
 				3E1D8081220BDFE9004D861F /* ErrorView.swift in Sources */,
 				3E1D8089220BE195004D861F /* EmptyFavoritesView.swift in Sources */,
+				3E094DDF220D28B80005806E /* MoviesGridView.swift in Sources */,
+				3E094DDD220D21470005806E /* Results.swift in Sources */,
 				3EC8165F220935250089792D /* ColorsMovs.swift in Sources */,
+				3E094DD6220CFF0C0005806E /* NetwortManager.swift in Sources */,
 				3E7F274D220A5B5A00408DDC /* SerachBarView.swift in Sources */,
 				3E7F2770220A8A4000408DDC /* LoadingMoviesView.swift in Sources */,
 				3EC81646220920380089792D /* AppDelegate.swift in Sources */,

@@ -11,7 +11,8 @@ import UIKit
 class SerachBarView: UIView, UITextFieldDelegate {
 
     let screenSize = UIScreen.main.bounds;
-    
+    var seachtTextFiled = UITextField()
+        
     override init(frame: CGRect) {
         super.init(frame: CGRect(x: 0, y: 60, width: screenSize.width, height: 60))
         setupView()
@@ -24,7 +25,7 @@ class SerachBarView: UIView, UITextFieldDelegate {
     private func setupView(){
         backgroundColor = ColorsMovs.PURPLE
         
-        let seachtTextFiled = UITextField(frame: CGRect(x: 10, y: 5, width: screenSize.width-20, height: 36))
+        seachtTextFiled = UITextField(frame: CGRect(x: 10, y: 5, width: screenSize.width-20, height: 36))
         seachtTextFiled.backgroundColor = ColorsMovs.PURPLE_LIGHT
         seachtTextFiled.textColor = UIColor.white
         seachtTextFiled.font = UIFont(name: FontMovs.DOSIS_SEMI_BOLD, size: 18)

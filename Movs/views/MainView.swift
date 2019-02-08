@@ -11,6 +11,15 @@ import UIKit
 class MainView: UIView {
 
     let screenSize = UIScreen.main.bounds;
+
+    var moviesGridView = MoviesGridView()
+    var loadingMoviesView = LoadingMoviesView()
+    var emptySearchView = EmptySearchView()
+    var errorView = ErrorView()
+    var emptyFavoritesView = EmptyFavoritesView()
+    
+    var searchBarView = SerachBarView()
+    var footerView = FooterBarView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,22 +57,78 @@ class MainView: UIView {
     }
     
     private func setupSearchBar(){
-        addSubview(SerachBarView(frame: screenSize))
+        searchBarView = SerachBarView(frame: screenSize)
+        addSubview(searchBarView)
     }
 
     private func setupFooter(){
-        addSubview(FooterBarView(frame: screenSize))
+        footerView = FooterBarView(frame: screenSize)
+        addSubview(footerView)
     }
     
     private func setupContentView(){
         let frame = CGRect(x: 0, y: 120, width: screenSize.width, height: screenSize.height - 180)
         
-        // addSubview(LoadingMoviesView(frame: frame))
-        // addSubview(EmptySearchView(frame: frame))
-        // addSubview(ErrorView(frame: frame))
-        addSubview(EmptyFavoritesView(frame: frame))
+        self.moviesGridView = MoviesGridView(frame: frame)
+        self.loadingMoviesView = LoadingMoviesView(frame: frame)
+        self.emptyFavoritesView = EmptyFavoritesView(frame: frame)
+        self.errorView = ErrorView(frame: frame)
+        self.emptySearchView = EmptySearchView(frame: frame)
         
+        addSubview(self.loadingMoviesView)
+    }
+    
+    public func showLoadingMoviesView(){
+        self.moviesGridView.removeFromSuperview()
+        self.errorView.removeFromSuperview()
+        self.emptySearchView.removeFromSuperview()
+        self.emptyFavoritesView.removeFromSuperview()
         
+        addSubview(self.loadingMoviesView)
+    }
+    
+    public func showMovies(movies: [Movie]){
+        self.footerView.selectMovies()
+        
+        self.loadingMoviesView.removeFromSuperview()
+        self.errorView.removeFromSuperview()
+        self.emptySearchView.removeFromSuperview()
+        self.emptyFavoritesView.removeFromSuperview()
+        
+        self.moviesGridView.showMoviesVew(movies: movies)
+        addSubview(self.moviesGridView)
+    }
+    
+    public func showFavorites(){
+        self.footerView.selectFavorites()
+        self.showEmptyFavoritesView()
+    }
+    
+    public func showErrorView(){
+        self.moviesGridView.removeFromSuperview()
+        self.loadingMoviesView.removeFromSuperview()
+        self.emptySearchView.removeFromSuperview()
+        self.emptyFavoritesView.removeFromSuperview()
+        
+        addSubview(self.errorView)
+    }
+    
+    public func showEmptySearchView(){
+        self.moviesGridView.removeFromSuperview()
+        self.loadingMoviesView.removeFromSuperview()
+        self.errorView.removeFromSuperview()
+        self.emptyFavoritesView.removeFromSuperview()
+        
+        addSubview(self.emptySearchView)
+    }
+    
+    public func showEmptyFavoritesView(){
+        self.moviesGridView.removeFromSuperview()
+        self.loadingMoviesView.removeFromSuperview()
+        self.errorView.removeFromSuperview()
+        self.emptySearchView.removeFromSuperview()
+        
+        addSubview(self.emptyFavoritesView)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.makeKeyAndVisible()
         }
         
-        
+        NetworkManager.shared.getPopularMovies();
         
         return true
     }
